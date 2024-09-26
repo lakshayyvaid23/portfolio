@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshay Vaid's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="book">
+    <div class="page" id="home">
+        <h1>Lakshay Vaid</h1>
+        <h2>Welcome to My Portfolio</h2>
+        <div class="photo-placeholder">[Your Photo Here]</div>
+        <p>I'm a recent BCA graduate from <strong>IITM Janakpuri</strong> with a GPA of 7.55, currently looking for opportunities in the tech field. I am passionate about software development and eager to contribute to innovative projects.</p>
+        <button class="next" onclick="nextPage('information')">Next</button>
+    </div>
+
+    <div class="page" id="information" style="display:none;">
+        <h2>Information</h2>
+        <p>Core Skills:</p>
+        <ul>
+            <li>Core Java</li>
+            <li>Swing</li>
+            <li>AWT</li>
+            <li>MySQL Database</li>
+            <li>HTML & CSS</li>
+            <li>Basic JavaScript</li>
+        </ul>
+        <button class="next" onclick="nextPage('education')">Next</button>
+    </div>
+
+    <div class="page" id="education" style="display:none;">
+        <h2>Education</h2>
+        <p>BCA Graduate from <strong>IITM Janakpuri</strong></p>
+        <p>GPA: 7.55</p>
+        <p>Relevant Coursework: Data Structures, Database Management Systems, Software Engineering</p>
+        <button class="next" onclick="nextPage('university-projects')">Next</button>
+    </div>
+
+    <div class="page" id="university-projects" style="display:none;">
+        <h2>University Projects</h2>
+        <div class="project">
+            <h3>🐍 Snake Game</h3>
+            <p>Create a classic Snake Game where the player controls a snake to collect points. Each time the snake collects a point, it grows longer, increasing the difficulty. This project helped me grasp game mechanics and user interaction principles.</p>
+            <p><strong>Technologies Used:</strong> Core Java, AWT, Swing.</p>
+        </div>
+        <button class="next" onclick="nextPage('other-projects')">Next</button>
+    </div>
+
+    <div class="page" id="other-projects" style="display:none;">
+        <h2>Other Projects</h2>
+        <div class="project">
+            <h3>👨‍💼 Employee Management System</h3>
+            <p>A system to manage employee records within an organization. Users can add, update, and delete employee information, making it an essential tool for HR departments.</p>
+            <p><strong>Technologies Used:</strong> Core Java, AWT, Swing.</p>
+        </div>
+        <div class="project">
+            <h3>🏨 Hotel Management System</h3>
+            <p>Manage hotel operations, including booking rooms and check-ins. The user-friendly interface efficiently handles guest information and reservations.</p>
+            <p><strong>Technologies Used:</strong> Core Java, AWT, Swing.</p>
+        </div>
+        <div class="project">
+            <h3>📝 Personal Blog</h3>
+            <p>A blogging platform that enables users to create, edit, and delete posts. Showcases my skills in HTML, CSS, and basic JavaScript.</p>
+        </div>
+        <button class="next" onclick="nextPage('contact')">Next</button>
+    </div>
+
+    <div class="page" id="contact" style="display:none;">
+        <h2>Contact</h2>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:lakshayvaid11@gmail.com">lakshayvaid11@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> Phone: <a href="tel:9818958344">9818958344</a></p>
+        <button class="next" onclick="nextPage('feedback')">Next</button>
+    </div>
+
+    <div class="page" id="feedback" style="display:none;">
+        <h2>Feedback</h2>
+        <form id="feedbackForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <button class="next" onclick="alert('Thank you for your feedback!')">Finish</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Lakshay Vaid. All rights reserved.</p>
+</footer>
+
+<script>
+    function nextPage(pageId) {
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => {
+            page.style.display = 'none';
+        });
+        document.getElementById(pageId).style.display = 'block';
+    }
+
+    document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Thank you for your feedback, ' + document.getElementById('name').value + '!');
+        this.reset();
+    });
+</script>
+</body>
+</html>
